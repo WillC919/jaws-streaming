@@ -1,0 +1,19 @@
+{
+  "name": "cloud-computing-milestone",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install": "npm run install-client && npm run install-server",
+    "install-client": "npm install --prefix client",
+    "install-server": "npm install --prefix server",
+    "start": "concurrently \"npm run start-server\" \"npm run start-client\"",
+    "start-client": "npm start --prefix client",
+    "start-server": "npm start --prefix server",
+    "build-client": "npm run build --prefix client",
+    "heroku-postbuild": "npm run build-client"
+  },
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "devDependencies": {}
+}
